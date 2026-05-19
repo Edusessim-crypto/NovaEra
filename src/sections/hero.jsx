@@ -1,7 +1,7 @@
 // Hero — headline + subhead + lead form + floating phone mockups
 const HEADLINES = {
   A: {
-    title: <>Seu Delivery Pode <span className="orange">Triplicar</span> os Pedidos em <span style={{whiteSpace:'nowrap'}}>90 Dias</span>.</>,
+    title: <>Seu Delivery Pode <span className="orange">Triplicar</span> os Pedidos em 90 Dias.</>,
     sub: 'A Nova Era é a assessoria especializada em deliveries que coloca um time completo pra trabalhar pelo seu negócio — enquanto você foca em operar. Sem achismo. Sem enrolação. Só resultado.'
   },
   B: {
@@ -48,23 +48,23 @@ const Hero = ({ headline }) => {
 
           <div className="hero__visual">
             {/* Background orange shape */}
-            <div aria-hidden="true" style={{
-              position:'absolute', right:0, top:60, width:380, height:380,
-              background:'var(--orange)', borderRadius:'48px', transform:'rotate(-4deg)'
+            <div aria-hidden="true" className="hero-blob" style={{
+              position:'absolute', right:'5%', top:'8%', width:'70%', aspectRatio:'1',
+              background:'var(--orange)', borderRadius:'18%', transform:'rotate(-4deg)', maxWidth:380
             }}></div>
 
-            <IFoodPhone style={{top:0, right:90, transform:'rotate(-6deg)', zIndex:2}}/>
-            <InstagramPhone style={{top:120, right:-30, transform:'rotate(8deg)', zIndex:3}}/>
+            <IFoodPhone style={{top:'2%', right:'24%', transform:'rotate(-6deg)', zIndex:2}}/>
+            <InstagramPhone style={{top:'22%', right:'-8%', transform:'rotate(8deg)', zIndex:3}}/>
 
             {/* Hand-drawn arrow */}
-            <svg className="hand-arrow" style={{top:340, left:-20, width:160, height:120, color:'var(--ink)'}} viewBox="0 0 160 120" fill="none">
-              <path d="M10 30 C 30 10, 80 5, 120 35 C 140 50, 130 75, 90 85 C 60 92, 40 88, 30 95" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeDasharray=""/>
+            <svg className="hand-arrow hero-arrow" style={{bottom:'8%', left:'2%', width:140, height:100, color:'var(--ink)'}} viewBox="0 0 160 120" fill="none">
+              <path d="M10 30 C 30 10, 80 5, 120 35 C 140 50, 130 75, 90 85 C 60 92, 40 88, 30 95" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
               <path d="M28 88 L30 95 L38 92" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
             </svg>
-            <div style={{
-              position:'absolute', top:330, left:-180, transform:'rotate(-6deg)',
-              fontFamily:'var(--font-display)', fontWeight:700, fontSize:18, color:'var(--ink)',
-              maxWidth:140, lineHeight:1.1
+            <div className="hero-arrow-label" style={{
+              position:'absolute', bottom:'12%', left:'-2%', transform:'rotate(-6deg)',
+              fontFamily:'var(--font-display)', fontWeight:700, fontSize:16, color:'var(--ink)',
+              maxWidth:130, lineHeight:1.1, zIndex:4
             }}>
               seu delivery,<br/>finalmente <span className="orange">crescendo</span>
             </div>
