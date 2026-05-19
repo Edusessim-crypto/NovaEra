@@ -144,6 +144,7 @@ input, textarea, select {
   line-height: 1.15;
   letter-spacing: -0.015em;
   margin: 0;
+  text-wrap: pretty;
 }
 
 .lead {
@@ -178,9 +179,13 @@ input, textarea, select {
   border: none;
   transition: transform 0.15s ease, background 0.2s ease, color 0.2s ease;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  justify-content: center;
   font-family: var(--font-display);
   letter-spacing: -0.01em;
+  max-width: 100%;
+  line-height: 1.15;
 }
 
 .btn:hover { transform: translateY(-2px); }
@@ -212,6 +217,12 @@ input, textarea, select {
 .btn--xl {
   padding: 26px 40px;
   font-size: 20px;
+}
+
+@media (max-width: 560px) {
+  .btn { font-size: 15px; padding: 16px 22px; gap: 8px; }
+  .btn--lg { font-size: 16px; padding: 18px 22px; }
+  .btn--xl { font-size: 17px; padding: 20px 24px; }
 }
 
 .btn .arrow {
@@ -300,14 +311,32 @@ input, textarea, select {
 .hero__grid {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.9fr);
-  gap: 56px;
-  align-items: center;
+  grid-template-areas:
+    "top    visual"
+    "bottom visual";
+  column-gap: 56px;
+  row-gap: 32px;
+  align-items: start;
+}
+
+.hero__copy-top { grid-area: top; align-self: end; }
+.hero__visual   { grid-area: visual; align-self: center; }
+.hero__copy-bottom { grid-area: bottom; align-self: start; }
+
+.hero__copy-top, .hero__copy-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
 @media (max-width: 1100px) {
   .hero__grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    grid-template-areas:
+      "top"
+      "visual"
+      "bottom";
+    row-gap: 32px;
   }
 }
 
@@ -359,8 +388,8 @@ input, textarea, select {
 
 @media (max-width: 1100px) {
   .hero__visual {
-    height: 520px;
-    max-width: 520px;
+    height: 480px;
+    max-width: 480px;
     margin: 0 auto;
     width: 100%;
   }
@@ -368,7 +397,11 @@ input, textarea, select {
 
 @media (max-width: 560px) {
   .hero__visual {
-    height: 460px;
+    height: 420px;
+    max-width: 360px;
+  }
+  .hero {
+    padding: 110px 0 60px;
   }
 }
 
@@ -1300,7 +1333,7 @@ input, textarea, select {
 
 @media (max-width: 560px) {
   .phone {
-    width: 220px;
+    width: 200px;
   }
 }
 

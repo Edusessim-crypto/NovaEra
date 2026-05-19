@@ -30,7 +30,7 @@ const Hero = ({ headline }) => {
 
       <div className="container">
         <div className="hero__grid">
-          <div className="hero__copy">
+          <div className="hero__copy-top">
             <div className="hero__chips">
               <span className="chip"><span className="chip__dot chip__dot--pulse"></span>+100 deliveries atendidos</span>
               <span className="chip">+R$10M em vendas geradas</span>
@@ -38,7 +38,9 @@ const Hero = ({ headline }) => {
 
             <h1 className="h-display">{h.title}</h1>
             <p className="lead">{h.sub}</p>
+          </div>
 
+          <div className="hero__copy-bottom">
             <LeadForm
               title="Fale com um especialista agora"
               subtitle="Preencha e a gente te liga no WhatsApp em até 5 minutos."
